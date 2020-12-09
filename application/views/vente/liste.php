@@ -19,7 +19,19 @@
                     <a href="<?php echo site_url('Vente/vue_ajout'); ?>"> <button type="button" class="btn btn-success">Register new sale</button> </a>
                         <section class="box ">
                             <header class="panel_header">
-                               
+                                <h2><br>
+                                    <?php if ($this->session->flashdata('success')) { ?>
+                                        <div class="alert alert-success" style="font-size: 12px;" role="alert"> 
+                                            <strong><?php echo $this->session->flashdata('success'); ?></strong>
+                                        </div>
+                                        <?php }?>
+                                        <!---- Error Message ---->
+                                        <?php if ($this->session->flashdata('error')) { ?>
+                                            <div class="alert alert-danger" style="font-size: 12px;" role="alert"> 
+                                            <strong><?php echo $this->session->flashdata('error'); ?></strong>
+                                        </div>
+                                    <?php } ?>
+                                </h2>
                             </header>
                             <div class="content-body">    <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">

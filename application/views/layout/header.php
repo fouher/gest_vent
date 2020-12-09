@@ -1,5 +1,10 @@
+<?php  if(!isset($_SESSION['logged_in'])){
+    if($_SESSION['logged_in']!=true){redirect("Login");}
+}else{
+    if($_SESSION['logged_in']!=true){redirect("Login");}
+}  ?>
 
- <link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
+<link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
 
 <script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?> ></script>
 <!DOCTYPE html>
@@ -64,7 +69,7 @@
     <link href=<?php echo base_url()."assets/css/style.css";?> rel="stylesheet" type="text/css" />
     <link href=<?php echo base_url()."assets/css/responsive.css";?> rel="stylesheet" type="text/css" />
     <!-- CORE CSS TEMPLATE - END -->
-
+   
 
 
 </head>
@@ -251,10 +256,6 @@
                             <span class="input-group-addon input-focus">
                                 <i class="fa fa-search"></i>
                             </span>
-                            <form action="http://jaybabani.com/ultra-admin-html/preview/search-page.html" method="post">
-                                <input type="text" class="form-control animated fadeIn" placeholder="Search & Enter">
-                                <input type='submit' value="">
-                            </form>
                         </div>
                     </li>
                 </ul>
@@ -264,29 +265,12 @@
                     <li class="profile">
                         <a href="#" data-toggle="dropdown" class="toggle">
                             <img src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
-                            <span>Admin<i class="fa fa-angle-down"></i></span>
+                            <span> <?php echo $this->session->nom_employe; ?> <i class="fa fa-angle-down"></i></span>
                         </a>
                         <ul class="dropdown-menu profile animated fadeIn">
-                            <li>
-                                <a href="#settings">
-                                    <i class="fa fa-wrench"></i>
-                                    Settings
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#profile">
-                                    <i class="fa fa-user"></i>
-                                    Profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#help">
-                                    <i class="fa fa-info"></i>
-                                    Help
-                                </a>
-                            </li>
+                            
                             <li class="last">
-                                <a href="ui-login.html">
+                                <a href="<?php echo site_url('Login/logout'); ?>">
                                     <i class="fa fa-lock"></i>
                                     Logout
                                 </a>
