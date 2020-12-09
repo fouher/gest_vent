@@ -51,11 +51,21 @@
     <link href=<?php echo base_url()."assets/plugins/jvectormap/jquery-jvectormap-2.0.1.css";?> rel="stylesheet" type="text/css" media="screen" />
     <link href=<?php echo base_url()."assets/plugins/icheck/skins/minimal/white.css";?> rel="stylesheet" type="text/css" media="screen" /> <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
+    <!-- Datatable css - START --> 
+    <link href=<?php echo base_url()."assets/plugins/datatables/css/jquery.dataTables.css";?> rel="stylesheet" type="text/css" media="screen"/>
+    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css";?> rel="stylesheet" type="text/css" media="screen"/>
+    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css";?> rel="stylesheet" type="text/css" media="screen"/>
+    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.css";?> rel="stylesheet" type="text/css" media="screen"/>    
+
+     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+
 
     <!-- CORE CSS TEMPLATE - START -->
     <link href=<?php echo base_url()."assets/css/style.css";?> rel="stylesheet" type="text/css" />
     <link href=<?php echo base_url()."assets/css/responsive.css";?> rel="stylesheet" type="text/css" />
     <!-- CORE CSS TEMPLATE - END -->
+
+
 
 </head>
 <!-- END HEAD -->
@@ -336,7 +346,7 @@
                                 <a class="" href="ui-typography.html">Record a sale</a>
                             </li>
                             <li>
-                                <a class="" href="ui-accordion.html">Sales history</a>
+                                <a class="" href="<?php echo site_url('Vente'); ?>">Sales history</a>
                             </li>
                         </ul>
                     </li>

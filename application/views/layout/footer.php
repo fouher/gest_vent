@@ -221,6 +221,13 @@
 <script src=<?php echo base_url()."assets/plugins/icheck/icheck.min.js";?> type="text/javascript"></script>
 <script src=<?php echo base_url()."assets/js/dashboard.js";?> type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
+<!-- Datatable script - START --> 
+<script src=<?php echo base_url()."assets/plugins/datatables/js/jquery.dataTables.min.js";?> type="text/javascript"></script>
+<script src=<?php echo base_url()."assets/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js";?> type="text/javascript"></script>
+<script src=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js";?> type="text/javascript"></script>
+<script src=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.js";?> type="text/javascript"></script>
+<!-- datatable script - END --> 
+
 
 <!-- CORE TEMPLATE JS - START -->
 <script src=<?php echo base_url()."assets/js/scripts.js";?> type="text/javascript"></script>
@@ -230,6 +237,9 @@
 <script src=<?php echo base_url()."assets/plugins/sparkline-chart/jquery.sparkline.min.js";?> type="text/javascript"></script>
 <script src=<?php echo base_url()."assets/js/chart-sparkline.js";?> type="text/javascript"></script>
 <!-- Sidebar Graph - END -->
+
+
+
 
 
 <!-- General section box modal start -->
