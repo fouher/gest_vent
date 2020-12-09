@@ -1,557 +1,402 @@
+
+ <link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
+
+<script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?> ></script>
 <!DOCTYPE html>
-<html lang="en-gb">
-  <head>
+<html class=" ">
+    
+<!-- Mirrored from jaybabani.com/ultra-admin-html/preview/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Dec 2020 04:29:24 GMT -->
+
+<head>
+    <!-- 
+         * @Package: Ultra Admin - Responsive Theme
+         * @Subpackage: Bootstrap
+         * @Version: 4.1
+         * This file is part of Ultra Admin Theme.
+        -->
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ultra Admin : Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
 
-    <meta name="author" content="fth" />
+    <link rel="shortcut icon" type="image/x-icon" href=<?php echo base_url()."assets/images/favicon.png" ;?> /> <!-- Favicon -->
+    <link rel="apple-touch-icon-precomposed" href=<?php echo base_url()."assets/images/apple-touch-icon-57-precomposed.png";?> > <!-- For iPhone -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href=<?php echo base_url()."assets/images/apple-touch-icon-114-precomposed.png";?>> <!-- For iPhone 4 Retina display -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href=<?php echo base_url()."assets/images/apple-touch-icon-72-precomposed.png";?>> <!-- For iPad -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href=<?php echo base_url()."assets/images/apple-touch-icon-144-precomposed.png";?>> <!-- For iPad Retina display -->
 
 
-    <title>Logiciel de gestion</title>
-    <link  href="https://fonts.googleapis.com/css?family=Montserrat:900|Anonymous+Pro:400,700|Arimo:400,700"  rel="stylesheet" />
 
-    <link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
 
-    <script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?> ></script>
-  </head>
-  <body>
-    <svg width="24" height="24" viewBox="0 0 24 24" style="display:none">
-      <g
-        id="logo-icon"
-        stroke="currentColor"
-        stroke-width="1"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        fill="none"
-        fill-rule="evenodd"
-      >
-        <path
-          d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-        ></path>
-      </g>
-    </svg>
+    <!-- CORE CSS FRAMEWORK - START -->
+    <link href=<?php echo base_url()."assets/plugins/pace/pace-theme-flash.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/bootstrap/css/bootstrap.min.css";?> rel="stylesheet" type="text/css" />
+    <link href=<?php echo base_url()."assets/plugins/bootstrap/css/bootstrap-theme.min.css";?> rel="stylesheet" type="text/css" />
+    <link href=<?php echo base_url()."assets/fonts/font-awesome/css/font-awesome.css";?> rel="stylesheet" type="text/css" />
+    <link href=<?php echo base_url()."assets/css/animate.min.css";?> rel="stylesheet" type="text/css" />
+    <link href=<?php echo base_url()."assets/plugins/perfect-scrollbar/perfect-scrollbar.css";?> rel="stylesheet" type="text/css" />
+    <!-- CORE CSS FRAMEWORK - END -->
 
-    <div class="page page-sticky-sidebar">
-      <div class="app-header" style="display: none; visibility: hidden;">
-        <nav class="bg-white navbar">
-          <ul class="navbar-nav">
-            <a href="/" class="navbar-brand">
-              <svg width="24" height="24">
-                <use xlink:href="#logo-icon"></use>
-              </svg>
-              <span class="ml-2">Gest_vent</span>
-            </a>
-          </ul>
-          <ul class="ml-auto menu-right navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link toggle-fullscreen" href="javascript:;">
-                <span class="animated-icon">
-                  <div
-                    style="width:18px;height:18px"
-                    data-animation-path="vendor/animated-icons/fullscreen/fullscreen.json"
-                  ></div>
-                </span>
-              </a>
-            </li>
-            <li class="dropdown nav-item">
-              <a
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                href="#"
-                class="nav-link"
-                aria-expanded="false"
-              >
-                <span class="animated-icon">
-                  <div
-                    style="width:18px;height:18px"
-                    data-animation-path="vendor/animated-icons/toggle/toggle.json"
-                  ></div>
-                </span>
-              </a>
-              <div
-                tabindex="-1"
-                role="menu"
-                aria-hidden="true"
-                class="app-settings dropdown-menu dropdown-menu-right"
-              >
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="dropdown-item"
-                >
-                  Settings
-                </button>
-                <div tabindex="-1" class="m-0 dropdown-divider"></div>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="d-flex align-items-center justify-content-between dropdown-item"
-                >
-                  <label for="darkModeOption" class="m-0">Dark mode</label>
-                  <div class="custom-switch custom-control">
-                    <input
-                      type="checkbox"
-                      id="darkModeOption"
-                      name="darkModeOption"
-                      class="custom-control-input"
-                    />
-                    <label
-                      class="custom-control-label"
-                      for="darkModeOption"
-                    ></label>
-                  </div>
-                </button>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="d-flex align-items-center justify-content-between dropdown-item"
-                >
-                  <label for="boxedOption" class="m-0">Boxed layout</label>
-                  <div class="custom-switch custom-control">
-                    <input
-                      type="checkbox"
-                      id="boxedOption"
-                      name="boxedOption"
-                      class="custom-control-input"
-                    />
-                    <label
-                      class="custom-control-label"
-                      for="boxedOption"
-                    ></label>
-                  </div>
-                </button>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="d-flex align-items-center justify-content-between dropdown-item"
-                >
-                  <label for="stickyHeaderOption" class="m-0"
-                    >Sticky header</label
-                  >
-                  <div class="custom-switch custom-control">
-                    <input
-                      type="checkbox"
-                      id="stickyHeaderOption"
-                      name="stickyHeaderOption"
-                      class="custom-control-input"
-                    />
-                    <label
-                      class="custom-control-label"
-                      for="stickyHeaderOption"
-                    ></label>
-                  </div>
-                </button>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="d-flex align-items-center justify-content-between dropdown-item"
-                >
-                  <label for="stickySidebarOption" class="m-0"
-                    >Sticky sidebar</label
-                  >
-                  <div class="custom-switch custom-control">
-                    <input
-                      type="checkbox"
-                      id="stickySidebarOption"
-                      name="stickySidebarOption"
-                      class="custom-control-input"
-                      checked=""
-                    />
-                    <label
-                      class="custom-control-label"
-                      for="stickySidebarOption"
-                    ></label>
-                  </div>
-                </button>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="d-flex align-items-center justify-content-between dropdown-item"
-                >
-                  <label for="collapsedSidebarOption" class="m-0"
-                    >Collapsed sidebar</label
-                  >
-                  <div class="custom-switch custom-control">
-                    <input
-                      type="checkbox"
-                      id="collapsedSidebarOption"
-                      name="collapsedSidebarOption"
-                      class="custom-control-input"
-                    />
-                    <label
-                      class="custom-control-label"
-                      for="collapsedSidebarOption"
-                    ></label>
-                  </div>
-                </button>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="d-flex align-items-center justify-content-between dropdown-item"
-                >
-                  <label for="topHeaderOption" class="m-0">Top header</label>
-                  <div class="custom-switch custom-control">
-                    <input
-                      type="checkbox"
-                      id="topHeaderOption"
-                      name="topHeaderOption"
-                      class="custom-control-input"
-                    />
-                    <label
-                      class="custom-control-label"
-                      for="topHeaderOption"
-                    ></label>
-                  </div>
-                </button>
-              </div>
-            </li>
-            <li class="dropdown nav-item">
-              <a
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                href="#"
-                class="nav-link"
-                aria-expanded="false"
-              >
-                <span class="animated-icon">
-                  <div
-                    style="width:18px;height:18px"
-                    data-animation-path="vendor/animated-icons/globe/globe.json"
-                  ></div>
-                </span>
-                <span class="badge-top badge badge-danger badge-pill">6</span>
-              </a>
-              <div
-                tabindex="-1"
-                role="menu"
-                aria-hidden="true"
-                class="app-notifications dropdown-menu dropdown-menu-right"
-              >
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="dropdown-item"
-                >
-                  Notifications
-                </button>
-                <div tabindex="-1" class="m-0 dropdown-divider"></div>
-                <div class="app-notifications-inner">
-                  <ul class="list-group">
-                    <a
-                      href="#"
-                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
-                    >
-                      <span class="mr-3">
-                        <span
-                          class="position-relative d-flex rounded-circle"
-                          style="width: 40px; height: 40px;"
-                        >
-                          <img
-                            src="images/face2.jpg"
-                            alt="Amber McCoy"
-                            width="40px"
-                            height="40px"
-                            class="rounded-circle"
-                          />
-                        </span>
-                      </span>
-                      <span>Amber McCoy has joined your mailing list</span>
-                    </a>
-                    <a
-                      href="#"
-                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
-                    >
-                      <span class="mr-3">
-                        <span
-                          class="position-relative d-flex rounded-circle"
-                          style="width: 40px; height: 40px;"
-                        >
-                          <img
-                            src="images/face2.jpg"
-                            alt="Danielle Perkins"
-                            width="40px"
-                            height="40px"
-                            class="rounded-circle"
-                          />
-                        </span>
-                      </span>
-                      <span>Danielle Perkins created a new task list</span>
-                    </a>
-                    <a
-                      href="#"
-                      class="w-100 d-flex flex-row align-items-center list-group-item-action list-group-item"
-                    >
-                      <span class="mr-3">
-                        <span
-                          class="position-relative d-flex rounded-circle"
-                          style="width: 40px; height: 40px;"
-                        >
-                          <img
-                            src="images/face4.jpg"
-                            alt="Megan Hanson"
-                            width="40px"
-                            height="40px"
-                            class="rounded-circle"
-                          />
-                        </span>
-                      </span>
-                      <span>Megan Hanson created a new task list</span>
-                    </a>
-                  </ul>
-                </div>
-                <div
-                  class="d-flex align-items-center justify-content-between py-2 px-3"
-                >
-                  <span>
-                    <span class="badge badge-danger badge-pill">4</span>
-                    <small class="mr-auto ml-1">Notifications</small>
-                  </span>
-                  <button
-                    type="button"
-                    class="button-shadow btn btn-outline-secondary btn-sm"
-                  >
-                    load more
-                  </button>
-                </div>
-              </div>
-            </li>
-            <li class="dropdown nav-item">
-              <a
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                href="#"
-                class="nav-link"
-                aria-expanded="false"
-              >
-                <span
-                  class="position-relative d-flex rounded-circle"
-                  style="width:32px;height:32px"
-                >
-                  <img
-                    src="images/avatar.jpg"
-                    alt="avatar"
-                    width="32px"
-                    height="32px"
-                    class="rounded-circle"
-                  />
-                </span>
-              </a>
-              <div
-                tabindex="-1"
-                role="menu"
-                aria-hidden="true"
-                class="dropdown-menu dropdown-menu-right"
-              >
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="dropdown-item"
-                >
-                  Settings
-                </button>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="dropdown-item"
-                >
-                  Profile
-                </button>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="dropdown-item"
-                >
-                  Notifications
-                </button>
-                <div tabindex="-1" class="dropdown-divider"></div>
-                <button
-                  type="button"
-                  tabindex="0"
-                  role="menuitem"
-                  class="dropdown-item"
-                >
-                  Signout
-                </button>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="position-relative d-flex flex-row flex-fill page-wrapper">
-        <div
-          class="sidebar bg-dark page-sidebar"
-          style="transform:translateX(0);min-width:280px;max-width:280px"
-        >
-          <div class="h-100 d-flex flex-column flex-1">
-            <nav
-              class="navbar navbar-expand-md  d-none d-lg-flex d-xl-flex bg-dark"
-            >
-              <a href="#" class="navbar-brand">
-                <svg width="24" height="24">
-                  <use xlink:href="#logo-icon"></use>
-                </svg>
-                <span class="ml-3">Gest_vent</span>
-              </a>
-              <a href="javascript:;" class="nav-toggle">
-                <span class="animated-icon">
-                  <div
-                    style="width:24px;height:24px"
-                    data-animation-path="vendor/animated-icons/menu-back/menu-back.json"
-                    data-anim-loop="false"
-                  ></div>
-                </span>
-              </a>
-            </nav>
-            <ul class="d-block scroll-y flex-1 py-3 nav flex-column">
-              <div class="sidebar-item">
-                <li class="nav-item  active">
-                  <a
-                    class="nav-link d-flex align-items-center nav-link"
-                    href="<?php echo site_url('Home'); ?>"
-                  >
-                    <span class="animated-icon">
-                      <div
-                        style="width:18px;height:18px"
-                        data-animation-path="vendor/animated-icons/shopping-bag/shopping-bag.json"
-                        data-anim-loop="false"
-                      ></div>
-                    </span>
-                    <span class="mr-auto menu-name">Dashboard</span>
-                  </a>
-                </li>
-              </div>
-              <div class="sidebar-item">
-                <li class="nav-item ">
-                  <a
-                    class="nav-link d-flex align-items-center nav-link"
-                    href="widgets.html"
-                  >
-                    <span class="animated-icon">
-                      <div
-                        style="width:18px;height:18px"
-                        data-animation-path="vendor/animated-icons/book/book.json"
-                        data-anim-loop="false"
-                      ></div>
-                    </span>
-                    <span class="mr-auto menu-name">Product</span>
-                    <span class="badge badge-danger badge-pill">5</span>
-                  </a>
-                </li>
-              </div>
-              <div class="sidebar-item">
-                <li class="nav-item ">
-                  <a
-                    class="nav-link d-flex align-items-center nav-link"
-                    href="javascript:;"
-                  >
-                    <span class="animated-icon">
-                      <div
-                        style="width:18px;height:18px"
-                        data-animation-path="vendor/animated-icons/folder/folder.json"
-                        data-anim-loop="false"
-                      ></div>
-                    </span>
-                    <span class="mr-auto menu-name">Sale</span>
-                    <span class="caret">
-                      <span class="animated-icon">
-                        <div
-                          style="width:12px;height:12px"
-                          data-animation-path="vendor/animated-icons/expand/expand.json"
-                        ></div>
-                      </span>
-                    </span>
-                  </a>
-                  <div class="sub-menu collapse " aria-expanded="false">
-                    <ul class="nav flex-column">
-                      <li class="nav-item ">
-                        <a href="bootstrap-ui-alerts.html" class="nav-link">
-                          <span class="mr-auto menu-name">Record a sale</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a href="bootstrap-ui-badge.html" class="nav-link">
-                          <span class="mr-auto menu-name">Sales history </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </div>
-              <div class="sidebar-item">
-                <li class="nav-item ">
-                  <a
-                    class="nav-link d-flex align-items-center nav-link"
-                    href="taskboard.html"
-                  >
-                    <span class="animated-icon">
-                      <div
-                        style="width:18px;height:18px"
-                        data-animation-path="vendor/animated-icons/bookmark-in-book/bookmark-in-book.json"
-                        data-anim-loop="false"
-                      ></div>
-                    </span>
-                    <span class="mr-auto menu-name">Taskboard</span>
-                    <span class="badge badge-primary badge-pill">New</span>
-                  </a>
-                </li>
-              </div>
-              <div class="sidebar-item">
-                <li class="nav-item ">
-                  <a
-                    class="nav-link d-flex align-items-center nav-link"
-                    href="javascript:;"
-                  >
-                    <span class="animated-icon">
-                      <div
-                        style="width:18px;height:18px"
-                        data-animation-path="vendor/animated-icons/box/box.json"
-                        data-anim-loop="false"
-                      ></div>
-                    </span>
-                    <span class="mr-auto menu-name">Parameter</span>
-                    <span class="caret">
-                      <span class="animated-icon">
-                        <div
-                          style="width:12px;height:12px"
-                          data-animation-path="vendor/animated-icons/expand/expand.json"
-                        ></div>
-                      </span>
-                    </span>
-                  </a>
-                  <div class="sub-menu collapse " aria-expanded="false">
-                    <ul class="nav flex-column">
-                      <li class="nav-item ">
-                        <a href="<?php echo site_url('Categorie'); ?>" class="nav-link">
-                          <span class="mr-auto menu-name">Categorie</span>
-                        </a>
-                      </li>
-                      <li class="nav-item ">
-                        <a href="tables-responsive.html" class="nav-link">
-                          <span class="mr-auto menu-name">Users</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </div>
-            </ul>
-          </div>
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <link href=<?php echo base_url()."assets/plugins/morris-chart/css/morris.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/jquery-ui/smoothness/jquery-ui.min.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/rickshaw-chart/css/graph.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/rickshaw-chart/css/detail.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/rickshaw-chart/css/legend.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/rickshaw-chart/css/extensions.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/rickshaw-chart/css/rickshaw.min.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/rickshaw-chart/css/lines.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/jvectormap/jquery-jvectormap-2.0.1.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/icheck/skins/minimal/white.css";?> rel="stylesheet" type="text/css" media="screen" /> <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
+
+    <!-- CORE CSS TEMPLATE - START -->
+    <link href=<?php echo base_url()."assets/css/style.css";?> rel="stylesheet" type="text/css" />
+    <link href=<?php echo base_url()."assets/css/responsive.css";?> rel="stylesheet" type="text/css" />
+    <!-- CORE CSS TEMPLATE - END -->
+
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class=" ">
+    <!-- START TOPBAR -->
+    <div class='page-topbar '>
+        <div class='logo-area'>
+         
         </div>
-        <div class="page-overlay" style="visibility:hidden;opacity:0"></div>
+        <div class='quick-area'>
+            <div class='pull-left'>
+                <ul class="info-menu left-links list-inline list-unstyled">
+                    <li class="sidebar-toggle-wrap">
+                        <a href="#" data-toggle="sidebar" class="sidebar_toggle">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <!-- <li class="message-toggle-wrapper">
+                        <a href="#" data-toggle="dropdown" class="toggle">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge badge-primary">7</span>
+                        </a>
+                        <ul class="dropdown-menu messages animated fadeIn">
+
+                            <li class="list">
+
+                                <ul class="dropdown-menu-list list-unstyled ps-scrollbar">
+                                    <li class="unread status-available">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-1.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Clarine Vassar</strong>
+                                                    <span class="time small">- 15 mins ago</span>
+                                                    <span class="profile-status available pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-away">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-2.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Brooks Latshaw</strong>
+                                                    <span class="time small">- 45 mins ago</span>
+                                                    <span class="profile-status away pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-busy">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-3.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Clementina Brodeur</strong>
+                                                    <span class="time small">- 1 hour ago</span>
+                                                    <span class="profile-status busy pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-offline">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-4.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Carri Busey</strong>
+                                                    <span class="time small">- 5 hours ago</span>
+                                                    <span class="profile-status offline pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-offline">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-5.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Melissa Dock</strong>
+                                                    <span class="time small">- Yesterday</span>
+                                                    <span class="profile-status offline pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-available">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-1.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Verdell Rea</strong>
+                                                    <span class="time small">- 14th Mar</span>
+                                                    <span class="profile-status available pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-busy">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-2.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Linette Lheureux</strong>
+                                                    <span class="time small">- 16th Mar</span>
+                                                    <span class="profile-status busy pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-away">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="data/profile/avatar-3.png" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Araceli Boatright</strong>
+                                                    <span class="time small">- 16th Mar</span>
+                                                    <span class="profile-status away pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                            <li class="external">
+                                <a href="javascript:;">
+                                    <span>Read All Messages</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li> -->
+                    
+                    <li class="hidden-sm hidden-xs searchform">
+                        <div class="input-group">
+                            <span class="input-group-addon input-focus">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <form action="http://jaybabani.com/ultra-admin-html/preview/search-page.html" method="post">
+                                <input type="text" class="form-control animated fadeIn" placeholder="Search & Enter">
+                                <input type='submit' value="">
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class='pull-right'>
+                <ul class="info-menu right-links list-inline list-unstyled">
+                    <li class="profile">
+                        <a href="#" data-toggle="dropdown" class="toggle">
+                            <img src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
+                            <span>Admin<i class="fa fa-angle-down"></i></span>
+                        </a>
+                        <ul class="dropdown-menu profile animated fadeIn">
+                            <li>
+                                <a href="#settings">
+                                    <i class="fa fa-wrench"></i>
+                                    Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#profile">
+                                    <i class="fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#help">
+                                    <i class="fa fa-info"></i>
+                                    Help
+                                </a>
+                            </li>
+                            <li class="last">
+                                <a href="ui-login.html">
+                                    <i class="fa fa-lock"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- END TOPBAR -->
+    <!-- START CONTAINER -->
+    <div class="page-container row-fluid">
+
+        <!-- SIDEBAR - START -->
+        <div class="page-sidebar ">
+
+            <!-- MAIN MENU - START -->
+            <div class="page-sidebar-wrapper" id="main-menu-wrapper">
+
+                <!-- USER INFO - START -->
+                <div class="profile-info row">
+
+                     
+
+                </div>
+                <!-- USER INFO - END -->
 
 
-       <!-- début du contenur de la page principale -->
 
-        <div class="position-relative d-flex flex-column flex-fill page-content" style="min-width:0">
+                <ul class='wraplist'>
+
+
+                    <li class="open">
+                        <a href="<?php echo site_url('Home'); ?>">
+                            <i class="fa fa-dashboard"></i>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-suitcase"></i>
+                            <span class="title">Products</span>
+                            
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-suitcase"></i>
+                            <span class="title">Sales</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="ui-typography.html">Record a sale</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-accordion.html">Sales history</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-sliders"></i>
+                            <span class="title">Taskboard</span>
+                             
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">
+                            <i class="fa fa-gift"></i>
+                            <span class="title">Parameter</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="" href="ui-pricing.html">Categorie</a>
+                            </li>
+                            <li>
+                                <a class="" href="ui-profile.html">Users</a>
+                            </li>
+                        </ul>
+                    </li>
+                     
+                     
+
+                </ul>
+
+            </div>
+            <!-- MAIN MENU - END -->
+
+
+
+            <div class="project-info">
+
+                <div class="block1">
+                    <div class="data">
+                        <span class='title'>New&nbsp;Orders</span>
+                        <span class='total'>2,345</span>
+                    </div>
+                    <div class="graph">
+                        <span class="sidebar_orders">...</span>
+                    </div>
+                </div>
+
+                <div class="block2">
+                    <div class="data">
+                        <span class='title'>Visitors</span>
+                        <span class='total'>345</span>
+                    </div>
+                    <div class="graph">
+                        <span class="sidebar_visitors">...</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <!--  SIDEBAR - END -->
