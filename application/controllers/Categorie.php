@@ -88,13 +88,18 @@ public function update(){
 	
 }
 
+  
+    
+    public function delete_categorie($id)
+	{
+			$sql_query=$this->categorie_model->deleteCategorieById($id);
+			if($sql_query){
+				$this->session->set_flashdata('success', 'Categorie  deleted');
+				redirect("Categorie");
 
-	public function delete($id){
-			if ($id == null) {
-				redirect('Categorie');
-			} else {
-				$this->categorie_model->delete($id);
-				redirect('Categorie');
+			}else{
+				$this->session->set_flashdata('error', 'an erro occured please try aigain');
+				echo var_dump($sql_query);
 			}
-	} 
+	}
 }

@@ -62,4 +62,54 @@ class Produit extends CI_Controller {
 				redirect("Produit");
 			}
 	}
+    
+    
+    	public function update_product(){
+			if($this->input->post()){
+				$id = $this->input->post('id');
+				$code = $this->input->post('code');
+				$description = $this->input->post('description');
+				$idcategorie = $this->input->post('idcategorie');
+				$quantite = $this->input->post('quantite');
+                $seuil = $this->input->post('seuil');
+                $prix_achat = $this->input->post('prix_achat');
+                $prix_vente = $this->input->post('prix_vente');
+                
+				$sql_query = $this->produit_model->edit_produit($id, $code,$nom, $description,$idcategorie,$quantite,$seuil,$prix_achat,$prix_vente );
+				if($sql_query){
+					$this->session->set_flashdata('success', 'Products update successfuly');
+				}else{
+					$this->session->set_flashdata('error', 'an error occured please check and try aigain');
+				}
+			}
+			redirect('Produit');
+	}
+    
+    public function page_modification($id){
+			$data = array();
+			if ($id == null) {
+				redirect('produit');
+			} else {                
+				$data['categorie'] = $this->categorie_model->getAll();
+				$data['produit'] = $this->produit_model->getlistproduitandcategoriebyidsite($id);
+				
+				$this->load->view('layout/header.php');
+				$this->load->view('produit/update_produit.php', $data);
+				$this->load->view('layout/footer.php');
+			}
+	}
+    
+    public function delete_produit($id)
+	{
+			$sql_query=$this->produit_model->deleteProduitById($id);
+			if($sql_query){
+				$this->session->set_flashdata('success', 'product deleted');
+				redirect("Produit");
+
+			}else{
+				$this->session->set_flashdata('error', 'an erro occured please try aigain');
+				echo var_dump($sql_query);
+			}
+	}
+	
 }

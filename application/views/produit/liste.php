@@ -61,7 +61,7 @@
                                             <td>
                                                 <!-- <a href="<?php //echo base_url()."Vehicule/page_details/".$item->id; ?>" ><i class="glyphicon glyphicon-eye-open"></i></a> --> &nbsp;
                                                 <a href="<?php echo base_url()."Produit/page_modification/".$item->id; ?>"><i class="fa fa-edit"></i></a> &nbsp;
-                                                <a href="#" id="delete_btn" data-id2=<?php echo base_url()."Produit/delete/"; ?> data-toggle="modal" data-target=".bs-example-modal-default" onclick="pass_link(<?php echo $item->id; ?>)"><i class="fa fa-trash"></i></a> </td>
+                                                <a href="<?php echo base_url()."Produit/delete_produit/".$item->id ;?>" data-toggle="modal" data-target=".bs-example-modal-default" onclick="return onDelete()"><i class="fa fa-trash"></i></a> </td>
                                         </tr>
                                         <?php 
                                                     }
@@ -83,8 +83,29 @@
     </section>
 
 
-
+    <div class="modal fade bs-example-modal-default" tabindex="-1" role="dialog" aria-labelledby="myDefaultModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times-circle"></span></button>
+                    <h4 class="modal-title" id="myDefaultModalLabel">Delete a product</h4>
+                </div>
+                <div class="modal-body">
+                    Do you really want to delete this product ?
+                </div>
+                <div class="modal-footer">
+                    <?php 
+                                                                    foreach ($produit as $item) { 
+                                                                ?>
+                    <a href="<?php echo base_url('Produit/delete_produit/').$item->id; }?>"><button type="button" class="btn btn-primary">Yes</button></a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 
 <!-- END CONTENT -->
+
+<!--modal default size end for site-->

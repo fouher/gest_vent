@@ -52,7 +52,7 @@
                                                             <td> <a href="<?php echo base_url()."categorie/page_details/".$categorie->id; ?>"><i class="glyphicon glyphicon-eye-open"></i></a> &nbsp;
                                                                 <a href="<?php echo base_url()."Categorie/page_modification/".$categorie->id; ?>"><i class="fa fa-edit"></i></a> &nbsp;
 
-                                                                <a href="#" id="delete_btn" data-id2="<?php echo base_url('Categorie/delete/').$categorie->id; ?>" data-toggle="modal" data-target=".bs-example-modal-default" onclick="pass_link(<?php echo $categorie->id; ?>)"><i class="fa fa-trash"></i></a> </td>
+                                                                <a href="#" id="delete_btn" data-id2="<?php echo base_url('Categorie/delete_categorie/').$categorie->id; ?>" data-toggle="modal" data-target=".bs-example-modal-default" onclick="pass_link(<?php echo $categorie->id; ?>)"><i class="fa fa-trash"></i></a> </td>
                                                         </tr>
                                                         <?php
                             }

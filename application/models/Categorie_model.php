@@ -39,12 +39,17 @@ class Categorie_model extends CI_Model
             ->update($this->table);
 	}
 	
-	public function delete($id)
+	public function deleteCategorieById($id)
     {
-        $this->db->set('deleted', true)
-            ->where('id', $id)
-            ->update($this->table);
-	}	
+         {
+        $data = array(
+			'deleted' => 1,
+		 );
+		return $this->db->where('id', $id)
+					->update($this->table, $data); 
+	}
+    
+    }
 
 
     public function exists_categorie($nom, $description)
