@@ -28,6 +28,11 @@ class Vente_model extends CI_Model
 					->result(); */
 	}	
 
+	public function add($data)
+	{
+		return $this->db->insert($this->table, $data);	
+	}
+
 	public function getById($id)
 	{
 		return $this->db->select('*')

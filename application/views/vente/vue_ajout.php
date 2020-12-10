@@ -51,7 +51,7 @@
                                 <div id="container_input">
 
                                 </div>
-                                <a href="submit" class="btn btn-success"> Register </a>
+                                <input type="submit" value="Register" class="btn btn-success">
                                 </form>
                                 <!-- END -->
                             </div>

@@ -56,9 +56,9 @@ class Vente extends CI_Controller {
 			$client_id=$this->input->post('client');
 			
 			for($i=0; $i < $nbr_produit; $i++){
- 
+<<<<<<< HEAD
 				$prouit_quatite_prix = '';
- 
+=======
 				$produit_quatite_prix = array($this->input->post('produit'.$i), $this->input->post('quantite'.$i));
 
 				$produit_id=$this->input->post('produit'.$i);
@@ -73,7 +73,7 @@ class Vente extends CI_Controller {
 				
 				$sql_query = $this->vente_model->add($data);
 
- 
+>>>>>>> eabef8202943f7fe374d6669d446cfe95114fecb
 			}
  
 

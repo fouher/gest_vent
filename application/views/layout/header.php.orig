@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
+
+<script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?>></script>
+=======
 <?php  if(!isset($_SESSION['logged_in'])){
     if($_SESSION['logged_in']!=true){redirect("Login");}
 }else{
@@ -7,6 +12,7 @@
 <link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
 
 <script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?> ></script>
+>>>>>>> eabef8202943f7fe374d6669d446cfe95114fecb
 <!DOCTYPE html>
 <html class=" ">
 
