@@ -81,7 +81,8 @@
 
                         </div>
 
-                    </div> <!-- End .row -->
+                    </div> 
+                    <!-- End .row -->
 
 
                     <div class="row">
@@ -475,27 +476,27 @@
                                         <li>
                                             <input type="checkbox" id="task-3" class="icheck-minimal-white todo-task">
                                             <label class="icheck-label form-label" for="task-3">Ecommerce Theme</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="task-4" class="icheck-minimal-white todo-task">
-                                            <label class="icheck-label form-label" for="task-4">PHP and jQuery</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="task-5" class="icheck-minimal-white todo-task">
-                                            <label class="icheck-label form-label" for="task-5">Allocate&nbsp;Resource</label>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="task-4" class="icheck-minimal-white todo-task">
+                                                <label class="icheck-label form-label" for="task-4">PHP and jQuery</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="task-5" class="icheck-minimal-white todo-task">
+                                                <label class="icheck-label form-label" for="task-5">Allocate&nbsp;Resource</label>
+                                            </li>
+                                            </ul>
 
-                                </div>
-                                <div class="wid-add-task">
-                                    <input type="text" class="form-control" placeholder="Add task" />
-                                </div>
-                            </div>
+                                            </div>
+                                            <div class="wid-add-task">
+                                                <input type="text" class="form-control" placeholder="Add task" />
+                                            </div>
+                                            </div>
 
 
-                        </div>
+                                            </div>
 
-                    </div> <!-- End .row -->
+                                            </div> <!-- End .row -->
 
 
                 </div>

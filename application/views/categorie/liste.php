@@ -76,6 +76,10 @@
 
     </section>
 </section>
+
+
+
+
 <!--modal default size-->
 <div class="modal fade bs-example-modal-default" tabindex="-1" role="dialog" aria-labelledby="myDefaultModalLabel">
     <div class="modal-dialog" role="document">
