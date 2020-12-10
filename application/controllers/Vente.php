@@ -56,7 +56,7 @@ class Vente extends CI_Controller {
 			$client_id=$this->input->post('client');
 			
 			for($i=0; $i < $nbr_produit; $i++){
-				$prouit_quatite_prix = 
+				$prouit_quatite_prix = '';
 			}
       		$client_id=$this->input->post('client');
       		$client_id=$this->input->post('client');

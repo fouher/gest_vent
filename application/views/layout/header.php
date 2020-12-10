@@ -1,10 +1,9 @@
+<link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
 
- <link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
-
-<script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?> ></script>
+<script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?>></script>
 <!DOCTYPE html>
 <html class=" ">
-    
+
 <!-- Mirrored from jaybabani.com/ultra-admin-html/preview/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Dec 2020 04:29:24 GMT -->
 
 <head>
@@ -22,7 +21,7 @@
     <meta content="" name="author" />
 
     <link rel="shortcut icon" type="image/x-icon" href=<?php echo base_url()."assets/images/favicon.png" ;?> /> <!-- Favicon -->
-    <link rel="apple-touch-icon-precomposed" href=<?php echo base_url()."assets/images/apple-touch-icon-57-precomposed.png";?> > <!-- For iPhone -->
+    <link rel="apple-touch-icon-precomposed" href=<?php echo base_url()."assets/images/apple-touch-icon-57-precomposed.png";?>> <!-- For iPhone -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href=<?php echo base_url()."assets/images/apple-touch-icon-114-precomposed.png";?>> <!-- For iPhone 4 Retina display -->
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href=<?php echo base_url()."assets/images/apple-touch-icon-72-precomposed.png";?>> <!-- For iPad -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href=<?php echo base_url()."assets/images/apple-touch-icon-144-precomposed.png";?>> <!-- For iPad Retina display -->
@@ -51,13 +50,13 @@
     <link href=<?php echo base_url()."assets/plugins/jvectormap/jquery-jvectormap-2.0.1.css";?> rel="stylesheet" type="text/css" media="screen" />
     <link href=<?php echo base_url()."assets/plugins/icheck/skins/minimal/white.css";?> rel="stylesheet" type="text/css" media="screen" /> <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
-    <!-- Datatable css - START --> 
-    <link href=<?php echo base_url()."assets/plugins/datatables/css/jquery.dataTables.css";?> rel="stylesheet" type="text/css" media="screen"/>
-    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css";?> rel="stylesheet" type="text/css" media="screen"/>
-    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css";?> rel="stylesheet" type="text/css" media="screen"/>
-    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.css";?> rel="stylesheet" type="text/css" media="screen"/>    
+    <!-- Datatable css - START -->
+    <link href=<?php echo base_url()."assets/plugins/datatables/css/jquery.dataTables.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css";?> rel="stylesheet" type="text/css" media="screen" />
+    <link href=<?php echo base_url()."assets/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.css";?> rel="stylesheet" type="text/css" media="screen" />
 
-     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
 
     <!-- CORE CSS TEMPLATE - START -->
@@ -76,7 +75,7 @@
     <!-- START TOPBAR -->
     <div class='page-topbar '>
         <div class='logo-area'>
-         
+
         </div>
         <div class='quick-area'>
             <div class='pull-left'>
@@ -245,7 +244,7 @@
                         </ul>
 
                     </li> -->
-                    
+
                     <li class="hidden-sm hidden-xs searchform">
                         <div class="input-group">
                             <span class="input-group-addon input-focus">
@@ -293,7 +292,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -312,7 +311,7 @@
                 <!-- USER INFO - START -->
                 <div class="profile-info row">
 
-                     
+
 
                 </div>
                 <!-- USER INFO - END -->
@@ -322,17 +321,17 @@
                 <ul class='wraplist'>
 
 
-                    <li class="open">
+                    <li class="<?php if($this->uri->segment(1) == 'Home') { echo 'open'; } ?>">
                         <a href="<?php echo site_url('Home'); ?>">
                             <i class="fa fa-dashboard"></i>
                             <span class="title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="">
-                        <a href="javascript:;">
+                    <li class="<?php if($this->uri->segment(1) == 'Produit') { echo 'open'; } ?>">
+                        <a href="<?php echo site_url('Produit'); ?>">
                             <i class="fa fa-suitcase"></i>
                             <span class="title">Products</span>
-                            
+
                         </a>
                     </li>
                     <li class="">
@@ -345,7 +344,7 @@
                             <li>
                                 <a class="" href="ui-typography.html">Record a sale</a>
                             </li>
-                            <li>
+                            <li class="<?php if($this->uri->segment(1) == 'Vente') { echo 'open'; } ?>">
                                 <a class="" href="<?php echo site_url('Vente'); ?>">Sales history</a>
                             </li>
                         </ul>
@@ -354,7 +353,7 @@
                         <a href="javascript:;">
                             <i class="fa fa-sliders"></i>
                             <span class="title">Taskboard</span>
-                             
+
                         </a>
                     </li>
                     <li class="">
@@ -364,16 +363,16 @@
                             <span class="arrow "></span>
                         </a>
                         <ul class="sub-menu">
-                            <li>
-                                <a class="" href="ui-pricing.html">Categorie</a>
+                            <li class="<?php if($this->uri->segment(1) == 'Categorie') { echo 'open'; } ?>">
+                                <a class="" href="<?php echo site_url('Categorie'); ?>">Categorie</a>
                             </li>
-                            <li>
-                                <a class="" href="ui-profile.html">Users</a>
+                            <li class="<?php if($this->uri->segment(1) == 'Users') { echo 'open'; } ?>">
+                                <a class="" href="<?php echo site_url('Users'); ?>">Users</a>
                             </li>
                         </ul>
                     </li>
-                     
-                     
+
+
 
                 </ul>
 
@@ -381,30 +380,6 @@
             <!-- MAIN MENU - END -->
 
 
-
-            <div class="project-info">
-
-                <div class="block1">
-                    <div class="data">
-                        <span class='title'>New&nbsp;Orders</span>
-                        <span class='total'>2,345</span>
-                    </div>
-                    <div class="graph">
-                        <span class="sidebar_orders">...</span>
-                    </div>
-                </div>
-
-                <div class="block2">
-                    <div class="data">
-                        <span class='title'>Visitors</span>
-                        <span class='total'>345</span>
-                    </div>
-                    <div class="graph">
-                        <span class="sidebar_visitors">...</span>
-                    </div>
-                </div>
-
-            </div>
 
 
 
