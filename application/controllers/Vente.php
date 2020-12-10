@@ -58,6 +58,9 @@ class Vente extends CI_Controller {
 			$client_id=$this->input->post('client');
 			
 			for($i=0; $i < $nbr_produit; $i++){
+ 
+				$prouit_quatite_prix = '';
+ 
 				$produit_quatite_prix = array($this->input->post('produit'.$i), $this->input->post('quantite'.$i));
 
 				$produit_id=$this->input->post('produit'.$i);
@@ -72,6 +75,7 @@ class Vente extends CI_Controller {
 
 				$sql_query = $this->vente_model->add($data_insert);
 
+ 
 			}
 
 			$data['ventes'] = $this->vente_model->getByDateAndCustomer($current_date, $client_id );

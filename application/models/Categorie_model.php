@@ -9,6 +9,7 @@ class Categorie_model extends CI_Model
 		return $this->db->select('*')
 					->from($this->table)
 					->where('deleted', 0)
+					->order_by($this->table.'.id', 'desc')
 					->get()
 					->result();
 	}	
@@ -23,17 +24,14 @@ class Categorie_model extends CI_Model
 					->result();
 	}
 
-	public function add($nom,$description)
+	public function add($nom , $description)
 	{
-		$today = date("Y-m-d H:i:s");
-        $data = array(
-            'nom' => $nom,
-            'description' => $description,
-            'is_deleted' => false
-        );
-        return $this->db->insert($this->table, $data);
+		return $this->db->set('nom', $nom)
+            ->set('description', $description)
+            ->set('deleted', false)
+            ->insert($this->table);
 	}
-
+ 
 	public function edit($id, $nom, $description)
     {
        return $this->db->set('nom', $nom)
@@ -42,11 +40,29 @@ class Categorie_model extends CI_Model
             ->update($this->table);
 	}
 	
-	public function delete($id)
+	public function deleteCategorieById($id)
     {
-        $this->db->set('deleted', true)
-            ->where('id', $id)
-            ->update($this->table);
-	}	
+         {
+        $data = array(
+			'deleted' => 1,
+		 );
+		return $this->db->where('id', $id)
+					->update($this->table, $data); 
+	}
+    
+    }
 
+
+    public function exists_categorie($nom, $description)
+    {
+        $result =  $this->db->select('*')
+        ->from($this->table)
+        ->where('nom', $nom)
+        ->where('deleted', false)
+        ->or_where('description', $description)
+        ->get()
+        ->row();
+        return  $result !== null? true  : false;
+    }
+	
 }

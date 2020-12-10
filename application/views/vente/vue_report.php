@@ -98,6 +98,10 @@
                                                     }
                                                 ?>
 
+                                                
+                                            </tbody>^
+
+                                            <tfoot>
                                                 <tr>
                                                     <td class="no-line"></td>
                                                     <td class="no-line"></td>
@@ -108,7 +112,7 @@
                                                     <td class="no-line "><h4>Total</h4></td>
                                                     <td class="no-line"><h3 style='margin:0px;' class="text-primary"><?php echo $total_prix." FCFA"; ?></h3></td>
                                                 </tr>
-                                            </tbody>
+                                            </tfoot>
                                         </table>
 
 
