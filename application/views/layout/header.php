@@ -327,19 +327,15 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a class="" href="ui-typography.html">Record a sale</a>
+                                <a class="" href="<?php echo site_url('Vente/vue_ajout'); ?>">Record a sale</a>
                             </li>
                             <li>
                                 <a class="" href="<?php echo site_url('Vente'); ?>">Sales history</a>
                             </li>
+                            <li>
+                                <a class="" href="<?php echo site_url('Vente/report'); ?>">Sales report</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="">
-                        <a href="javascript:;">
-                            <i class="fa fa-sliders"></i>
-                            <span class="title">Taskboard</span>
-                             
-                        </a>
                     </li>
                     <li class="">
                         <a href="javascript:;">

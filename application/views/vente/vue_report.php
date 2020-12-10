@@ -1,0 +1,131 @@
+<!-- START CONTENT -->
+
+<?php           
+                                                                $total_prix = 0;
+                                                                foreach ($ventes as $item) { 
+                                                                   $total_prix = $total_prix + ($item->prix_vente * $item->quantite_vendu);
+                                                           
+                                                                }
+                                                            ?>
+
+<section id="main-content" class=" ">
+            <section class="wrapper main-wrapper" style=''>
+
+                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                    <div class="page-title">
+
+                        <div class="pull-left">
+                            <h1 class="title">Sales report by filter</h1>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+
+                <div class="col-lg-12">
+                        <section class="box ">
+                            <header class="panel_header">
+                            </header>
+                            <div class="content-body">
+                            
+                            <form method="post" action="<?php echo base_url('Vente/report');?>">
+                                <div class='row'>
+                                        <div class="col-xs-5">
+                                            <label for="num_input">Start</label>
+                                            <input type="date" name="start_d"  class="form-control" value = "<?php if (isset($_SESSION['fdate'])){echo $_SESSION['fdate'];}else{echo date("Y-m-d", strtotime("first day of this month"));}  ?>">
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <label for="num_input">End</label>
+                                            <input type="date" name="end_d" class="form-control" value = "<?php if (isset($_SESSION['ldate'])){echo $_SESSION['ldate'];}else{echo date("Y-m-d"); }?>">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <label for="num_input">.</label><br>
+                                            <input type="submit" value="Search" class="btn btn-success">
+                                        </div>
+                                    </div>
+                                </form>
+                            
+                                <div class="row">
+                                </div>
+                            </div>
+                        </section>
+                </div>
+
+
+
+                <div class="col-lg-12">
+                        <section class="box ">
+                            <header class="panel_header">
+                            </header>
+                            <div class="content-body">
+                            
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <table id="example-1" class="table table-striped dt-responsive display" cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Product</th>
+                                                    <th>Customer</th>
+                                                    <th>Sale Date</th>
+                                                    <th>Sold By</th>
+                                                    <th>Unit</th>
+                                                    <th>Quantity</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <?php 
+                                                    $i=0;
+                                                    foreach ($ventes as $item) { 
+                                                        $i++;
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $i; ?></td>
+                                                    <td><?php echo $item->nom_produit; ?></td>
+                                                    <td><?php echo $item->nom_client; ?></td>
+                                                    <td><?php echo $item->date_creation; ?></td>
+                                                    <td><?php echo $item->nom_employe; ?></td>
+                                                    <td><?php echo $item->prix_vente;?></td>
+                                                    <td><?php echo $item->quantite_vendu; ?></td>
+                                                    <td><?php echo $item->prix_vente*$item->quantite_vendu; ?></td>
+                                                        </tr>
+                                                <?php 
+                                                    }
+                                                ?>
+
+                                                <tr>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line "><h4>Total</h4></td>
+                                                    <td class="no-line"><h3 style='margin:0px;' class="text-primary"><?php echo $total_prix." FCFA"; ?></h3></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                </div>
+
+
+
+                        </section></div>
+
+
+
+            </section>
+        </section>
+        <!-- END CONTENT -->

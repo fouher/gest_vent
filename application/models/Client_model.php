@@ -20,7 +20,7 @@ class Client_model extends CI_Model
 					->where('id', $id)
 					->where('deleted', false)
 					->get()
-					->result();
+					->row();
 	}
 	
 	public function delete($id)

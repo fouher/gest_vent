@@ -24,8 +24,8 @@ class Login extends CI_Controller {
 			if($this->employe_model->isExist($username, $password)){
 			   $user = $this->employe_model->getByNameANdPassword($username, $password);
 			   $this->session->set_userdata('username', $username);
-			   $this->session->set_flashdata('nom_employe', $user->nom);
-			   $this->session->set_flashdata('user_id', $username);
+			   $this->session->set_userdata('nom_employe', $user->nom);
+			   $this->session->set_userdata('user_id', $user->id);
 			   $this->session->set_userdata('logged_in', TRUE);
 			   $this->session->set_userdata('access_level', $user->role);
 			   redirect("Home");
