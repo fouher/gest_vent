@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href=<?php echo base_url()."assets/css/app.css" ;  ?> />
 
-<script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?> ></script>
+<script src=<?php echo base_url()."assets/vendor/Chart.min.js";  ?>></script>
 <!DOCTYPE html>
 <html class=" ">
 
@@ -69,7 +69,7 @@
     <link href=<?php echo base_url()."assets/css/style.css";?> rel="stylesheet" type="text/css" />
     <link href=<?php echo base_url()."assets/css/responsive.css";?> rel="stylesheet" type="text/css" />
     <!-- CORE CSS TEMPLATE - END -->
-   
+
 
 
 </head>
@@ -268,7 +268,7 @@
                             <span> <?php echo $this->session->nom_employe; ?> <i class="fa fa-angle-down"></i></span>
                         </a>
                         <ul class="dropdown-menu profile animated fadeIn">
-                            
+
                             <li class="last">
                                 <a href="<?php echo site_url('Login/logout'); ?>">
                                     <i class="fa fa-lock"></i>
@@ -349,6 +349,9 @@
                             </li>
                             <li class="<?php if($this->uri->segment(1) == 'Users') { echo 'open'; } ?>">
                                 <a class="" href="<?php echo site_url('Users'); ?>">Users</a>
+                            </li>
+                            <li class="<?php if($this->uri->segment(1) == 'Customers') { echo 'open'; } ?>">
+                                <a class="" href="<?php echo site_url('Client'); ?>">Customers</a>
                             </li>
                         </ul>
                     </li>
