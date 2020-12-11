@@ -9,6 +9,7 @@ class Produit extends CI_Controller {
 		      
         $this->load->model('Produit_model', 'produit_model');
         $this->load->model('Categorie_model', 'categorie_model');
+        $this->load->model('Client_model', 'client_model');
 
     }
 	
@@ -17,7 +18,8 @@ class Produit extends CI_Controller {
 
         $data=array();
 		$data['produit'] = $this->produit_model->getAll();
-        $data['categorie'] = $this->categorie_model->getAll();
+       // $data['categorie'] = $this->categorie_model->getAll();
+		$data['categories']=$this->categorie_model->getAll();
 
 		$this->load->view('layout/header');
 		$this->load->view('produit/liste', $data);
@@ -68,6 +70,7 @@ class Produit extends CI_Controller {
 			if($this->input->post()){
 				$id = $this->input->post('id');
 				$code = $this->input->post('code');
+				$nom = $this->input->post('nom');
 				$description = $this->input->post('description');
 				$idcategorie = $this->input->post('idcategorie');
 				$quantite = $this->input->post('quantite');

@@ -38,10 +38,11 @@
                 <section class="box ">
 
                     <div class="content-body">
+                        <form method="post" action="<?php echo base_url('Produit/update_product');?>">
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6">
 
-                                <form method="post" action="<?php echo base_url('Produit/update_product');?>">
+                                
                                     <div class="form-group">
                                         <label class="form-label" for="Nom">Product code:</label>
                                         <input value="<?php echo $code; ?>" type="text" class="form-control" name="code" id="code" placeholder="code of the product">
@@ -75,6 +76,11 @@
                                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                                     </div>
 
+                            </div>
+
+
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+
                                     <div class="form-group">
                                         <label class="form-label" for="Nom">Quantity:</label>
                                         <input value="<?php echo $quantite; ?>" type="text" class="form-control" name="quantite" id="Nom" placeholder="quantity of the product">
@@ -91,13 +97,15 @@
                                         <label class="form-label" for="Nom">buy_price:</label>
                                         <input value="<?php echo $prix_vente; ?>" type="text" class="form-control" name="prix_vente" id="Nom" placeholder="buy price">
                                     </div>
+                            </div>
+                        </div>
+                                <div class="row">
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary ">Submit</button>
                                     </div>
-                                </form>
-
-                            </div>
-                        </div>
+                                </div>
+                                   
+                        </form>
 
                     </div>
                 </section>

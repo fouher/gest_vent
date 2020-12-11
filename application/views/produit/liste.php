@@ -27,14 +27,13 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
 
                             <div class="r2_graph1 db_box">
-                                <table id="example-1" class="table table-striped dt-responsive display" cellspacing="0" width="100%">   
+                                <table id="example-1" class="table table-striped dt-responsive display" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>#</th>
                                             <th>Code</th>
                                             <th>Name</th>
                                             <th>Description</th>
-                                            <th>Categorie</th>
                                             <th>Quantity</th>
                                             <th>Seuil</th>
                                             <th>Buy price</th>
@@ -54,8 +53,8 @@
                                             <td><?php echo $item->code;?></td>
                                             <td><?php echo $item->nom;?></td>
                                             <td><?php echo $item->description;?></td>
-                                            <td><?php echo $item->idcategorie;?></td>
                                             <td><?php echo $item->quantite;?></td>
+                                            <td><?php echo $item->seuil;?></td>
                                             <td><?php echo $item->prix_achat;?></td>
                                             <td><?php echo $item->prix_vente;?></td>
                                             <td>
@@ -78,6 +77,10 @@
             </section>
         </div>
 
+
+
+
+        
 
 
     </section>

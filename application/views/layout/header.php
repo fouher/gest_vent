@@ -83,7 +83,7 @@
         <div class='logo-area'>
 
         </div>
-        <div class='quick-area'>
+        <div class='quick-area hidden-print' >
             <div class='pull-left'>
                 <ul class="info-menu left-links list-inline list-unstyled">
                     <li class="sidebar-toggle-wrap">
@@ -288,7 +288,7 @@
     <div class="page-container row-fluid">
 
         <!-- SIDEBAR - START -->
-        <div class="page-sidebar ">
+        <div class="page-sidebar hidden-print">
 
             <!-- MAIN MENU - START -->
             <div class="page-sidebar-wrapper" id="main-menu-wrapper">
@@ -319,7 +319,7 @@
 
                         </a>
                     </li>
-                    <li class="">
+                    <li class="<?php if($this->uri->segment(1) == 'Vente') { echo 'open'; } ?>">
                         <a href="javascript:;">
                             <i class="fa fa-suitcase"></i>
                             <span class="title">Sales</span>
@@ -327,17 +327,17 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a class="" href="<?php echo site_url('Vente/vue_ajout'); ?>">Record a sale</a>
+                                <a class="<?php if($this->uri->segment(2) == 'vue_ajout') { echo 'active'; } ?>" href="<?php echo site_url('Vente/vue_ajout'); ?>">Record a sale</a>
                             </li>
-                            <li class="<?php if($this->uri->segment(1) == 'Vente') { echo 'open'; } ?>">
-                                <a class="" href="<?php echo site_url('Vente'); ?>">Sales history</a>
+                            <li class="">
+                                <a class="<?php if($this->uri->segment(2) == '') { echo 'active'; } ?>" href="<?php echo site_url('Vente'); ?>">Sales history</a>
                             </li>
                             <li>
-                                <a class="" href="<?php echo site_url('Vente/report'); ?>">Sales report</a>
+                                <a class="<?php if($this->uri->segment(2) == 'report') { echo 'active'; } ?>" href="<?php echo site_url('Vente/report'); ?>">Sales report</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="">
+                    <li class="<?php if($this->uri->segment(1) == 'Categorie' || $this->uri->segment(1) == 'Client') { echo 'open'; } ?>">
                         <a href="javascript:;">
                             <i class="fa fa-gift"></i>
                             <span class="title">Parameter</span>
@@ -345,13 +345,13 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="<?php if($this->uri->segment(1) == 'Categorie') { echo 'open'; } ?>">
-                                <a class="" href="<?php echo site_url('Categorie'); ?>">Categorie</a>
+                                <a class="<?php if($this->uri->segment(1) == 'Categorie') { echo 'active'; } ?>" href="<?php echo site_url('Categorie'); ?>">Categorie</a>
                             </li>
-                            <li class="<?php if($this->uri->segment(1) == 'Users') { echo 'open'; } ?>">
-                                <a class="" href="<?php echo site_url('Users'); ?>">Users</a>
+                            <li class="<?php if($this->uri->segment(1) == 'User') { echo 'open'; } ?>">
+                                <a class="<?php if($this->uri->segment(1) == 'User') { echo 'active'; } ?>" href="<?php echo site_url('User'); ?>">Users</a>
                             </li>
-                            <li class="<?php if($this->uri->segment(1) == 'Customers') { echo 'open'; } ?>">
-                                <a class="" href="<?php echo site_url('Client'); ?>">Customers</a>
+                            <li class="<?php if($this->uri->segment(1) == 'Client') { echo 'open'; } ?>">
+                                <a class="<?php if($this->uri->segment(1) == 'Client') { echo 'active'; } ?>" href="<?php echo site_url('Client'); ?>">Customers</a>
                             </li>
                         </ul>
                     </li>
@@ -402,7 +402,7 @@
 
 
 
-        <div class="row hidden">
+        <div class="row hidden hidden-print">
 
                                 
 <div class="col-md-6 col-sm-7 col-xs-12">
@@ -420,7 +420,7 @@
 </div> <!-- End .row -->
 
 
-<div class="row hidden" >
+<div class="row hidden hidden-print" >
 
 
 <div class="col-md-4 col-sm-12 col-xs-12">

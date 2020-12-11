@@ -71,24 +71,6 @@
                                                         </tbody>
 
                                                     </table>
-                                                    <div class="row">
-                                                        <div class="col-xs-6">
-                                                            <div class="dataTables_info" id="example-1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
-                                                        </div>
-                                                        <div class="col-xs-6">
-                                                            <div class="dataTables_paginate paging_bootstrap" id="example-1_paginate">
-                                                                <ul class="pagination">
-                                                                    <li class="prev disabled"><a href="#">← Previous</a></li>
-                                                                    <li class="active"><a href="#">1</a></li>
-                                                                    <li><a href="#">2</a></li>
-                                                                    <li><a href="#">3</a></li>
-                                                                    <li><a href="#">4</a></li>
-                                                                    <li><a href="#">5</a></li>
-                                                                    <li class="next"><a href="#">Next → </a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
 
