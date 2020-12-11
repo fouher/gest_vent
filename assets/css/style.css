@@ -859,7 +859,7 @@ a:focus {
 .page-sidebar {
     height: auto;
     width: 300px;
-    position: absolute;
+    position: fixed;
     padding: 0px;
     background-color: rgba(50, 50, 58, 1.0);
     margin-top: 60px;

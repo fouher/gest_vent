@@ -21,7 +21,7 @@
         -->
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>Ultra Admin : Dashboard</title>
+    <title>Man Zon Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -264,7 +264,7 @@
                 <ul class="info-menu right-links list-inline list-unstyled">
                     <li class="profile">
                         <a href="#" data-toggle="dropdown" class="toggle">
-                            <img src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
+                        <i  class="fa fa-user"></i> 
                             <span> <?php echo $this->session->nom_employe; ?> <i class="fa fa-angle-down"></i></span>
                         </a>
                         <ul class="dropdown-menu profile animated fadeIn">
