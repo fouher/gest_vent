@@ -128,9 +128,9 @@
                                              $i=0;
                                             foreach($ProduitquantiteSeuil as $s) {
                                                 $i++;
-                                                
+                                                if ($s->quantite <= $s->seuil){
                                                 ?>
-                                        <tr <?php if ($s->quantite <= $s->seuil) echo 'style="background-color: #F6AEAE;"';?>>
+                                        <tr>
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $s->nom ; ?>  </td>
                                             <td><?php echo $s->quantite  ; ?>  </td>
@@ -138,7 +138,7 @@
                                         </tr>
                                       
                                         <?php 
-                                                    }
+                                            }}
                                                 ?>         
                                     </tbody>
                                 </table>
