@@ -88,13 +88,17 @@
                 div_row.classList.add("row");
                  
 
-                // Create an <div class = col-xs-6> element
+                // Create an <div class = col-xs-4> element
                 var div_col = document.createElement("div");
-                div_col.classList.add("col-xs-6");
+                div_col.classList.add("col-xs-4");
 
-                // Create an <div class = col-xs-6> element
+                // Create an <div class = col-xs-4> element
                 var div_col2 = document.createElement("div");
-                div_col2.classList.add("col-xs-6");
+                div_col2.classList.add("col-xs-4");
+
+                // Create an <div class = col-xs-4> element
+                var div_col3 = document.createElement("div");
+                div_col3.classList.add("col-xs-4");
                 
 
                 // Create an <input> element, set its type and name attributes
@@ -116,11 +120,19 @@
                 input_quantite.placeholder = "enter quantity";
                 input_quantite.name = "quantite" + i;
                 input_quantite.classList.add("form-control");
+
+                var input_prix = document.createElement("input");
+                input_prix.type = "number";
+                input_prix.placeholder = "enter unit price";
+                input_prix.name = "prix" + i;
+                input_prix.classList.add("form-control");
                 
                 div_col.appendChild(input_produit);
                 div_col2.appendChild(input_quantite);
+                div_col3.appendChild(input_prix);
                 div_row.appendChild(div_col); 
                 div_row.appendChild(div_col2); 
+                div_row.appendChild(div_col3); 
                 container.appendChild(div_row);
                 // Append a line break 
                 container.appendChild(document.createElement("br"));

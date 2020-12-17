@@ -14,8 +14,9 @@
                 <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                     <div class="page-title">
 
-                        <div class="pull-left">
-                            <h1 class="title">Sales report by filter</h1>
+                        <div class="pull-left" style="width: 100%;">
+                            <h1 class="title">global sales report according to dates  
+                                <span class="pull-right"> <a href="#" class="btn btn-purple">category report </a>&nbsp;&nbsp;<a href="#" class="btn btn-purple">Product report </a></span></h1>
                         </div>
 
 
@@ -32,13 +33,46 @@
                             
                             <form method="post" action="<?php echo base_url('Vente/report');?>">
                                 <div class='row'>
-                                        <div class="col-xs-5">
+                                        <div class="col-xs-2">
                                             <label for="num_input">Start</label>
                                             <input type="date" name="start_d"  class="form-control" value = "<?php if (isset($_SESSION['fdate'])){echo $_SESSION['fdate'];}else{echo date("Y-m-d", strtotime("first day of this month"));}  ?>">
                                         </div>
-                                        <div class="col-xs-5">
+                                        <div class="col-xs-2">
                                             <label for="num_input">End</label>
                                             <input type="date" name="end_d" class="form-control" value = "<?php if (isset($_SESSION['ldate'])){echo $_SESSION['ldate'];}else{echo date("Y-m-d"); }?>">
+                                        </div>
+
+                                            
+                                        <div class="col-xs-3">
+                                            <label for="num_input">Type</label>
+                                            <select id="first-choice" name="idcategorie" class="form-control" onchange="fillSelect()" required>
+                                                <option value="0">All</option>
+                                                <?php
+                                                            foreach($categorie as $item) {
+
+                                                echo "<option value=$item->id>$item->nom</option>";
+                                                            }
+                                                            ?>
+
+
+                                            </select>
+
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <label for="num_input">Produit</label>
+                                            <select id="second-choice" name="idcategorie" class="form-control" required>
+                                                <option value="0">All</option>
+                                                <?php
+                                                            foreach($categorie as $item) {
+
+                                                echo "<option value=$item->id>$item->nom</option>";
+                                                            }
+                                                            ?>
+
+
+                                            </select>
+
+
                                         </div>
                                         <div class="col-xs-2">
                                             <label for="num_input">.</label><br>

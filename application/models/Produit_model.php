@@ -81,6 +81,7 @@ class Produit_model extends CI_Model
             ->where('id', $id)
             ->update($this->table);
 	}
+ 
     
     public function getTotalProduit(){
         return $this->db->select('count(id) as total_produit')
@@ -91,4 +92,23 @@ class Produit_model extends CI_Model
     
     }
     
+ 
+
+	public function getById($id)
+	{
+		return $this->db->select('*')
+					->from($this->table)
+					->where('id', $id)
+					->where('deleted', false)
+					->get()
+					->row();
+	}
+
+	public function updateQuantity($id, $quantite)
+    {
+       return $this->db->set('quantite', $quantite)
+            ->where('id', $id)
+            ->update($this->table);
+	}
+ 
 }

@@ -22,4 +22,24 @@ class Welcome extends CI_Controller {
 	{
 		redirect("Home");
 	}
+
+
+
+	/**
+    * Get Download PDF File
+    *
+    * @return Response
+   */
+   function mypdf(){
+
+
+	$this->load->library('pdf');
+
+
+  	$this->pdf->load_view('mypdf');
+  	$this->pdf->render();
+
+
+  	$this->pdf->stream("welcome.pdf");
+   }
 }
