@@ -86,4 +86,36 @@ class Vente_model extends CI_Model
 		->result();
 	}
 
+	public function getByDateAndCategorieFiltre($start, $end, $categorie)
+	{
+		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.date_creation, vente.prix_vente_v, produit.nom as nom_produit,
+		 produit.prix_vente, client.nom as nom_client, employe.nom as nom_employe')
+		->from($this->table)
+		->join($this->table_client, $this->table_client.'.id = '.$this->table.'.idclient')
+		->join($this->table_employe, $this->table_employe.'.id = '.$this->table.'.idemploye')
+		->join($this->table_produit, $this->table_produit.'.id = '.$this->table.'.idproduit')
+		->where('date_creation >=',$start)
+		->where('date_creation <=',$end)
+		->where('idcategorie =',$categorie)
+		->order_by($this->table.'.id', 'desc')
+		->get()
+		->result();
+	}
+
+	public function getByDateAndProduitFiltre($start, $end, $produit)
+	{
+		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.date_creation, vente.prix_vente_v, produit.nom as nom_produit,
+		 produit.prix_vente, client.nom as nom_client, employe.nom as nom_employe')
+		->from($this->table)
+		->join($this->table_client, $this->table_client.'.id = '.$this->table.'.idclient')
+		->join($this->table_employe, $this->table_employe.'.id = '.$this->table.'.idemploye')
+		->join($this->table_produit, $this->table_produit.'.id = '.$this->table.'.idproduit')
+		->where('date_creation >=',$start)
+		->where('date_creation <=',$end)
+		->where($this->table_produit.'.id =',$produit)
+		->order_by($this->table.'.id', 'desc')
+		->get()
+		->result();
+	}
+
 }

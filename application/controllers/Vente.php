@@ -150,4 +150,70 @@ class Vente extends CI_Controller {
 			$this->load->view('layout/footer');
 		}
 	}
+
+	public function reportCategorie()
+	{
+		$data=array();
+
+		if($this->input->post()){
+			$start_d = $this->input->post('start_d');
+			$end_d = $this->input->post('end_d');
+			$categorie = $this->input->post('idcategorie');
+
+			$this->session->set_userdata('fdate', $start_d);
+			$this->session->set_userdata('ldate', $end_d);
+			$data['ventes']=$this->vente_model->getByDateAndCategorieFiltre($start_d, $end_d, $categorie);
+			$data['categorie'] = $this->categorie_model->getAll();
+			
+		
+			$this->load->view('layout/header');
+			$this->load->view('vente/vue_report_categorie', $data);
+			$this->load->view('layout/footer');
+		}else{
+			$this->session->unset_userdata('fdate');
+			$this->session->unset_userdata('ldate');
+			$start = date("Y-m-d", strtotime("first day of this month"));
+			$end = date("Y-m-d");
+			
+			$data['ventes']=$this->vente_model->getDateFiltre($start, $end);
+			$data['categorie'] = $this->categorie_model->getAll();
+			
+			$this->load->view('layout/header');
+			$this->load->view('vente/vue_report_categorie', $data);
+			$this->load->view('layout/footer');
+		}
+	}
+
+	public function reportProduct()
+	{
+		$data=array();
+
+		if($this->input->post()){
+			$start_d = $this->input->post('start_d');
+			$end_d = $this->input->post('end_d');
+			$produit = $this->input->post('idproduit');
+
+			$this->session->set_userdata('fdate', $start_d);
+			$this->session->set_userdata('ldate', $end_d);
+			$data['ventes']=$this->vente_model->getByDateAndProduitFiltre($start_d, $end_d, $produit);
+			$data['produits'] = $this->produit_model->getAll();
+			
+		
+			$this->load->view('layout/header');
+			$this->load->view('vente/vue_report_product', $data);
+			$this->load->view('layout/footer');
+		}else{
+			$this->session->unset_userdata('fdate');
+			$this->session->unset_userdata('ldate');
+			$start = date("Y-m-d", strtotime("first day of this month"));
+			$end = date("Y-m-d");
+			
+			$data['ventes']=$this->vente_model->getDateFiltre($start, $end);
+			$data['produits'] = $this->produit_model->getAll();
+			
+			$this->load->view('layout/header');
+			$this->load->view('vente/vue_report_product', $data);
+			$this->load->view('layout/footer');
+		}
+	}
 }

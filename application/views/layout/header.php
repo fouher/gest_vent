@@ -337,7 +337,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="<?php if($this->uri->segment(1) == 'Categorie' || $this->uri->segment(1) == 'Client') { echo 'open'; } ?>">
+                    <li class="<?php if($this->uri->segment(1) == 'Categorie' || $this->uri->segment(1) == 'Client' || $this->uri->segment(1) == 'Employe') { echo 'open'; } ?>">
                         <a href="javascript:;">
                             <i class="fa fa-gift"></i>
                             <span class="title">Parameter</span>
@@ -347,8 +347,8 @@
                             <li class="<?php if($this->uri->segment(1) == 'Categorie') { echo 'open'; } ?>">
                                 <a class="<?php if($this->uri->segment(1) == 'Categorie') { echo 'active'; } ?>" href="<?php echo site_url('Categorie'); ?>">Categorie</a>
                             </li>
-                            <li class="<?php if($this->uri->segment(1) == 'User') { echo 'open'; } ?>">
-                                <a class="<?php if($this->uri->segment(1) == 'User') { echo 'active'; } ?>" href="<?php echo site_url('User'); ?>">Users</a>
+                            <li class="<?php if($this->uri->segment(1) == 'Employe') { echo 'open'; } ?>">
+                                <a class="<?php if($this->uri->segment(1) == 'Employe') { echo 'active'; } ?>" href="<?php echo site_url('Employe'); ?>">Users</a>
                             </li>
                             <li class="<?php if($this->uri->segment(1) == 'Client') { echo 'open'; } ?>">
                                 <a class="<?php if($this->uri->segment(1) == 'Client') { echo 'active'; } ?>" href="<?php echo site_url('Client'); ?>">Customers</a>

@@ -23,7 +23,15 @@ class Employe_model extends CI_Model
 	public function isExist($username, $password)
     {
         return $this->getByNameANdPassword($username, $password) !== null? true  : false;
-    }
+	}
+	
+	public function exist_with_username($username){
+		return $this->db->select('*')
+					 ->from($this->table)
+					 ->where('username',$username)
+					 ->get()
+					 ->row();
+	}
 
 	public function getById($id)
 	{
@@ -33,6 +41,11 @@ class Employe_model extends CI_Model
 					->where('deleted', false)
 					->get()
 					->result();
+	}
+
+	public function add($data)
+	{
+		return $this->db->insert($this->table, $data);	
 	}
 	
 	public function delete($id)

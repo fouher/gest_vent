@@ -48,7 +48,7 @@
                                                     foreach ($produit as $item) { 
                                                         $i++;
                                                 ?>
-                                        <tr>
+                                        <tr  <?php if ($item->quantite <= $item->seuil) echo 'style="background-color: #F6AEAE;"';?> >
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $item->code;?></td>
                                             <td><?php echo $item->nom;?></td>

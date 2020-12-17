@@ -50,7 +50,7 @@
 
                                     <div class="form-group">
                                         <label class="form-label" for="Nom">Product name:</label>
-                                        <input value="<?php echo $nom; ?>" type="text" class="form-control" name="nom" id="Nom" placeholder="Name of the product">
+                                        <input value="<?php echo htmlspecialchars($nom); ?>" type="text" class="form-control" name="nom" id="Nom" placeholder="Name of the product">
                                     </div>
 
                                     <div class="form-group">
@@ -90,11 +90,11 @@
                                         <input value="<?php echo $seuil; ?>" type="text" class="form-control" name="seuil" id="Nom" placeholder="seuil">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="Nom">Sale_price:</label>
+                                        <label class="form-label" for="Nom">buy_price:</label>
                                         <input value="<?php echo $prix_achat; ?>" type="text" class="form-control" name="prix_achat" id="Nom" placeholder="sale price">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="Nom">buy_price:</label>
+                                        <label class="form-label" for="Nom">sales_price:</label>
                                         <input value="<?php echo $prix_vente; ?>" type="text" class="form-control" name="prix_vente" id="Nom" placeholder="buy price">
                                     </div>
                             </div>
