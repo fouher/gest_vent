@@ -20,23 +20,9 @@ class Produit_model extends CI_Model
 	   return  $this->db->select('vente_db.produit.id,vente_db.categorie.nom, vente_db.produit.nom, code')
 		  ->from($this->table)
 		  ->join('vente_db.categorie', 'vente_db.categorie.id = vente_db.produit.idcategorie')
-       
 		  -> get()
 		  ->result();
 	}
-    
-    
-     public function getlistproduitandcategoriebyidsite($id)
-	{
-	   return  $this->db->select('produit.id,categorie.nom, produit.nom as nom_produit, code, produit.description, produit.quantite, produit.prix_vente, produit.prix_achat, produit.seuil, produit.idcategorie')
-		  ->from($this->table)
-		  ->join('vente_db.categorie', 'vente_db.categorie.id  = vente_db.produit.idcategorie')
-          ->where('vente_db.produit.deleted', 0)
-          ->where('vente_db.produit.id', $id)
-		  -> get()
-		  ->row();
-	}
-
     
     public function add($data){
         $insert_data['code'] = $data['code'];
@@ -60,14 +46,6 @@ class Produit_model extends CI_Model
 					->update($this->table, $data); 
 	}
     
-   public function exist_produit_with_code($code){
-       return $this->db->select('*')
-                    ->from($this->table)
-                    ->where('code',$code)
-                    ->get()
-                    ->row();
-   }
-
     public function edit_produit($id, $code,$nom, $description,$idcategorie,$quantite,$seuil,$prix_achat,$prix_vente )
     {
        return $this->db->set('code', $code)
@@ -91,8 +69,30 @@ class Produit_model extends CI_Model
 					->row();
     
     }
-    
- 
+	
+	public function  getTotalProduitByCategorie(){
+		return $this->db->select('vente_db.categorie.nom as nom_categorie,count(vente_db.produit.id) as nbr_produit')
+					->from($this->table)
+					->join('vente_db.categorie', 'vente_db.categorie.id  = vente_db.produit.idcategorie')
+					->where('vente_db.produit.deleted', 0)
+					->group_by('vente_db.categorie.nom')
+	            	->order_by('vente_db.categorie.nom','idc')
+	            	->get()
+			    	->result_array();
+	}
+
+	 
+	public function getlistproduitandcategoriebyid($id)
+	{
+	   return  $this->db->select('produit.id,categorie.nom, produit.nom as nom_produit, code, produit.description, produit.quantite, produit.prix_vente, produit.prix_achat, produit.seuil, produit.idcategorie')
+		  ->from($this->table)
+		  ->join('vente_db.categorie', 'vente_db.categorie.id  = vente_db.produit.idcategorie')
+          ->where('vente_db.produit.deleted', 0)
+          ->where('vente_db.produit.id', $id)
+		  ->get()
+		  ->row();
+	}
+
 
 	public function getById($id)
 	{
