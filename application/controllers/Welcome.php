@@ -24,4 +24,24 @@ class Welcome extends CI_Controller {
 		$this->load->view('layout/home');
 		$this->load->view('layout/footer');
 	}
+
+
+
+	/**
+    * Get Download PDF File
+    *
+    * @return Response
+   */
+   function mypdf(){
+
+
+	$this->load->library('pdf');
+
+
+  	$this->pdf->load_view('mypdf');
+  	$this->pdf->render();
+
+
+  	$this->pdf->stream("welcome.pdf");
+   }
 }

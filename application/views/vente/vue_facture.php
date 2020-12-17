@@ -3,7 +3,7 @@
                                                             <?php           
                                                                 $total_prix = 0;
                                                                 foreach ($ventes as $item) { 
-                                                                   $total_prix = $total_prix + ($item->prix_vente * $item->quantite_vendu);
+                                                                   $total_prix = $total_prix + ($item->prix_vente_v * $item->quantite_vendu);
                                                            
                                                                 }
                                                             ?>
@@ -29,7 +29,7 @@
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class="invoice-head">
                                                     <div class="col-md-4 col-sm-12 col-xs-12 invoice-title">
-                                                        <h2 class="text-center bg-primary ">Qui Zon store</h2>    
+                                                        <h2 class="text-center bg-primary ">Man Zong Electronic</h2>    
                                                     </div>
                                                     <div class="col-md-3 col-sm-12 col-xs-12 invoice-head-info">
                                                         <span class='text-muted'>
@@ -79,7 +79,7 @@
                                                                 <td class="text-right"><h4>Totals</h4></td>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody style="text-align: right;">
                                                             <!-- foreach ($order->lineItems as $line) or some such thing here -->
                                                             <?php 
                                                                 $i=0;
@@ -88,9 +88,9 @@
                                                             ?>
                                                             <tr>
                                                                 <td><?php echo $item->nom_produit; ?></td>
-                                                                <td><?php echo $item->prix_vente." FCFA";?></td>
+                                                                <td><?php echo $item->prix_vente_v." FCFA";?></td>
                                                                 <td><?php echo $item->quantite_vendu; ?></td>
-                                                                <td><?php echo $item->prix_vente*$item->quantite_vendu." FCFA"; ?></td>
+                                                                <td><?php echo $item->prix_vente_v*$item->quantite_vendu." FCFA"; ?></td>
                                                             </tr>
                                                             <?php 
                                                                 }
@@ -113,7 +113,7 @@
 
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                                <a href="#" class="btn btn-purple btn-md"><i class="fa fa-print"></i> &nbsp; Print </a>        
+                                                <a href="<?php echo site_url('PdfController/facture/'.$client->id); ?>" class="btn btn-purple btn-md"><i class="fa fa-print"></i> &nbsp; Print </a>        
                                             </div>
                                         </div>
 

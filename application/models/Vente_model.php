@@ -9,8 +9,8 @@ class Vente_model extends CI_Model
 	
 	public function getAll()
 	{
-		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.date_creation, produit.nom as nom_produit,
-		 produit.prix_vente, client.nom as nom_client, employe.nom as nom_employe')
+		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.prix_vente_v,
+		 vente.date_creation, produit.nom as nom_produit, produit.prix_vente, client.nom as nom_client, employe.nom as nom_employe')
 		->from($this->table)
 		->join($this->table_client, $this->table_client.'.id = '.$this->table.'.idclient')
 		->join($this->table_employe, $this->table_employe.'.id = '.$this->table.'.idemploye')
@@ -57,14 +57,14 @@ class Vente_model extends CI_Model
 
 	public function getByDateAndCustomer($date_d, $clientId)
 	{
-		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.date_creation, produit.nom as nom_produit,
+		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.date_creation, vente.prix_vente_v, produit.nom as nom_produit,
 		 produit.prix_vente, client.nom as nom_client, employe.nom as nom_employe')
 		->from($this->table)
 		->join($this->table_client, $this->table_client.'.id = '.$this->table.'.idclient')
 		->join($this->table_employe, $this->table_employe.'.id = '.$this->table.'.idemploye')
 		->join($this->table_produit, $this->table_produit.'.id = '.$this->table.'.idproduit')
 		->where('date_creation >=',$date_d)
-		->where('idclient <=',$clientId)
+		->where('idclient =',$clientId)
 		//->where('.id_user_vehicle',$id)
 		->order_by($this->table.'.id', 'desc')
 		->get()
@@ -73,7 +73,7 @@ class Vente_model extends CI_Model
 
 	public function getDateFiltre($start, $end)
 	{
-		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.date_creation, produit.nom as nom_produit,
+		return $this->db->select('vente.id, vente.quantite_vendu, vente.idclient, vente.idproduit, vente.idemploye, vente.date_creation, vente.prix_vente_v, produit.nom as nom_produit,
 		 produit.prix_vente, client.nom as nom_client, employe.nom as nom_employe')
 		->from($this->table)
 		->join($this->table_client, $this->table_client.'.id = '.$this->table.'.idclient')

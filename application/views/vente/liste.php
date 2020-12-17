@@ -64,9 +64,9 @@
                                                 <tr>
                                                     <td><?php echo $i; ?></td>
                                                     <td><?php echo $item->nom_produit; ?></td>
-                                                    <td><?php echo $item->prix_vente;?></td>
+                                                    <td><?php echo $item->prix_vente_v;?></td>
                                                     <td><?php echo $item->quantite_vendu; ?></td>
-                                                    <td><?php echo $item->prix_vente*$item->quantite_vendu; ?></td>
+                                                    <td><?php echo $item->prix_vente_v*$item->quantite_vendu; ?></td>
                                                     <td><?php echo $item->nom_client; ?></td>
                                                     <td><?php echo $item->date_creation; ?></td>
                                                     <td><?php echo $item->nom_employe; ?></td>

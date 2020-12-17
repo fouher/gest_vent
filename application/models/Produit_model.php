@@ -81,4 +81,21 @@ class Produit_model extends CI_Model
             ->where('id', $id)
             ->update($this->table);
 	}
+
+	public function getById($id)
+	{
+		return $this->db->select('*')
+					->from($this->table)
+					->where('id', $id)
+					->where('deleted', false)
+					->get()
+					->row();
+	}
+
+	public function updateQuantity($id, $quantite)
+    {
+       return $this->db->set('quantite', $quantite)
+            ->where('id', $id)
+            ->update($this->table);
+	}
 }

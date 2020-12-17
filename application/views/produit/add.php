@@ -68,11 +68,11 @@
                                         <input type="text" class="form-control" name="seuil" id="Nom" placeholder="seuil">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="Nom">Sale_price:</label>
+                                        <label class="form-label" for="Nom">Buy_price:</label>
                                         <input type="text" class="form-control" name="prix_achat" id="Nom" placeholder="sale price">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="Nom">buy_price:</label>
+                                        <label class="form-label" for="Nom">Sale_price:</label>
                                         <input type="text" class="form-control" name="prix_vente" id="Nom" placeholder="buy price">
                                     </div>
                                     <div class="form-group">
