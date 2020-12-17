@@ -47,6 +47,20 @@ class Employe_model extends CI_Model
 	{
 		return $this->db->insert($this->table, $data);	
 	}
+  
+	public function edit($id, $nom, $username, $password, $telephone, $quartier, $sexe, $role)
+		{
+		return $this->db->set('nom', $nom)
+				->set('username', $username)
+				->set('sexe', $sexe)
+				->set('role', $role)
+				->set('telephone', $telephone)
+				->set('quartier', $quartier)
+				->set('password', $password)
+				->where('id', $id)
+				->update($this->table);
+			
+		}
 	
 	public function delete($id)
     {

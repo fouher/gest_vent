@@ -73,9 +73,9 @@
                                                                 <td><?php echo strtoupper($client->quartier); ?></td>
                                                                 <td><?php echo strtoupper($client->role); ?></td>
                                                                 <td>
-                                                                    <a href="<?php echo base_url()."Client/page_modification/".$client->id; ?>"><i class="fa fa-edit"></i></a> &nbsp;
+                                                                    <a href="<?php echo base_url()."Employe/page_modification/".$client->id; ?>"><i class="fa fa-edit"></i></a> &nbsp;
 
-                                                                    <a href="#" id="delete_btn" data-id2="<?php echo base_url('Client/delete_client/').$client->id; ?>" data-toggle="modal" data-target=".bs-example-modal-default" onclick="pass_link(<?php echo $client->id; ?>)"><i class="fa fa-trash"></i></a> </td>
+                                                                    </td>
                                                             </tr>
                                                             <?php
                                                        }

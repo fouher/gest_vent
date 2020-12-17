@@ -17,7 +17,7 @@
 
                 <div class="col-lg-12">
                     <a href="<?php echo site_url('Vente/vue_ajout'); ?>"> <button type="button" class="btn btn-success">Register new sale</button> </a>
-                    <a href="#"> <button class="btn btn-primary btn-icon hidden-print" onclick="print()" >Print</button> </a>
+                    <a href="#" class="hidden"> <button class="btn btn-primary btn-icon hidden-print" onclick="print()" >Print</button> </a>
 
                         <section class="box ">
                             <header class="panel_header">

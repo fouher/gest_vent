@@ -66,15 +66,17 @@ class Employe extends CI_Controller {
 			if($this->input->post()){
 				$id = $this->input->post('id');
 				$nom = $this->input->post('nom');
-				$description = $this->input->post('description');
+				$username = $this->input->post('username');
+				$password = $this->input->post('password');
 				$telephone = $this->input->post('telephone');
 				$quartier = $this->input->post('quartier');
-                $cni = $this->input->post('cni');
+                $sexe = $this->input->post('sexe');
+                $role = $this->input->post('role');
                 
                 
-				$sql_query = $this->client_model->edit_client($id, $nom, $description, $telephone, $quartier, $cni);
+				$sql_query = $this->employe_model->edit($id, $nom, $username, $password, $telephone, $quartier, $sexe, $role);
 				if($sql_query){
-					$this->session->set_flashdata('success', 'Customer update successfuly');
+					$this->session->set_flashdata('success', 'Employe update successfuly');
 				}else{
 					$this->session->set_flashdata('error', 'an error occured please check and try aigain');
 				}
@@ -88,7 +90,7 @@ class Employe extends CI_Controller {
 				redirect('Employe');
 			} else {                
 				 
-				$data['Employes'] = $this->client_model->getById($id);
+				$data['employes'] = $this->employe_model->getById($id);
                 
 				$this->load->view('layout/header.php');
 				$this->load->view('employe/update.php', $data);
