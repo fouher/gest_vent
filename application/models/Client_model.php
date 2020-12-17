@@ -23,6 +23,15 @@ class Client_model extends CI_Model
 					->row();
 	}
     
+    public function getTotalClient(){
+		return $this->db->select('count(id) as total_client')
+					->from($this->table)
+					->where('deleted', 0)
+					->get()
+					->row();
+    
+    }
+    
     
      public function add($data){
 		$insert_data['nom'] = $data['nom'];
@@ -63,5 +72,8 @@ class Client_model extends CI_Model
             ->where('id', $id)
             ->update($this->table);
 	}	
+    
+      
+  
 
 }

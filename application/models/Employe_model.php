@@ -40,6 +40,15 @@ class Employe_model extends CI_Model
         $this->db->set('deleted', true)
             ->where('id', $id)
             ->update($this->table);
-	}	
+	}
+    
+    public function getTotalEmploye(){
+        return $this->db->select('count(id) as total_employe')
+					->from($this->table)
+					->where('deleted', 0)
+					->get()
+					->row();
+    
+    }
 
 }

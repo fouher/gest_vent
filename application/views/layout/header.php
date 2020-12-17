@@ -83,7 +83,7 @@
         <div class='logo-area'>
 
         </div>
-        <div class='quick-area hidden-print' >
+        <div class='quick-area hidden-print'>
             <div class='pull-left'>
                 <ul class="info-menu left-links list-inline list-unstyled">
                     <li class="sidebar-toggle-wrap">
@@ -264,7 +264,7 @@
                 <ul class="info-menu right-links list-inline list-unstyled">
                     <li class="profile">
                         <a href="#" data-toggle="dropdown" class="toggle">
-                        <i  class="fa fa-user"></i> 
+                            <i class="fa fa-user"></i>
                             <span> <?php echo $this->session->nom_employe; ?> <i class="fa fa-angle-down"></i></span>
                         </a>
                         <ul class="dropdown-menu profile animated fadeIn">
@@ -404,54 +404,54 @@
 
         <div class="row hidden hidden-print">
 
-                                
-<div class="col-md-6 col-sm-7 col-xs-12">
-    <div class="r1_maingraph db_box">
-        <span class='pull-right switch'>
-            <i class='icon-default fa fa-line-chart icon-xs'></i>&nbsp; &nbsp;<i class='icon-secondary fa fa-bar-chart icon-xs'></i>&nbsp; &nbsp;<i class='icon-secondary fa fa-area-chart icon-xs'></i>
-        </span>
 
-        <div id="db_morris_line_graph" style="height:272px;width:95%;"></div>
-        <div id="db_morris_area_graph" style="height:272px;width:90%;display:none;"></div>
-        <div id="db_morris_bar_graph" style="height:272px;width:90%;display:none;"></div>
-    </div>
-</div>
+            <div class="col-md-6 col-sm-7 col-xs-12">
+                <div class="r1_maingraph db_box">
+                    <span class='pull-right switch'>
+                        <i class='icon-default fa fa-line-chart icon-xs'></i>&nbsp; &nbsp;<i class='icon-secondary fa fa-bar-chart icon-xs'></i>&nbsp; &nbsp;<i class='icon-secondary fa fa-area-chart icon-xs'></i>
+                    </span>
 
-</div> <!-- End .row -->
+                    <div id="db_morris_line_graph" style="height:272px;width:95%;"></div>
+                    <div id="db_morris_area_graph" style="height:272px;width:90%;display:none;"></div>
+                    <div id="db_morris_bar_graph" style="height:272px;width:90%;display:none;"></div>
+                </div>
+            </div>
 
-
-<div class="row hidden hidden-print" >
+        </div> <!-- End .row -->
 
 
-<div class="col-md-4 col-sm-12 col-xs-12">
-    <div class="r2_graph1 db_box">
+        <div class="row hidden hidden-print">
+
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="r2_graph1 db_box">
 
 
 
-        <form id="rickshaw_side_panel">
-            <section>
-                <div id="legend"></div>
-            </section>
-        </form>
+                    <form id="rickshaw_side_panel">
+                        <section>
+                            <div id="legend"></div>
+                        </section>
+                    </form>
 
-        <div id="chart_container" class="rickshaw_ext">
-            <div id="chart"></div>
-            <div id="timeline"></div>
-        </div>
+                    <div id="chart_container" class="rickshaw_ext">
+                        <div id="chart"></div>
+                        <div id="timeline"></div>
+                    </div>
 
-        <div id='rickshaw_side_panel' class="rickshaw_sliders">
-            <section>
-                <h5>Smoothing</h5>
-                <div id="smoother"></div>
-            </section>
-            <section>
-                <h5>Preview Range</h5>
-                <div id="preview" class="rickshaw_ext_preview"></div>
-            </section>
-        </div>
+                    <div id='rickshaw_side_panel' class="rickshaw_sliders">
+                        <section>
+                            <h5>Smoothing</h5>
+                            <div id="smoother"></div>
+                        </section>
+                        <section>
+                            <h5>Preview Range</h5>
+                            <div id="preview" class="rickshaw_ext_preview"></div>
+                        </section>
+                    </div>
 
-    </div>
+                </div>
 
-</div>
+            </div>
 
-</div> <!-- End .row -->
+        </div> <!-- End .row -->
