@@ -85,6 +85,27 @@ class Vente_model extends CI_Model
 		->get()
 		->result();
 	}
+    
+    public function getTotalVente(){
+        return $this->db->select('count(id) as total_v')
+					->from($this->table)
+					->where('deleted', 0)
+					->get()
+					->row();
+    
+    }
+    
+    public function getNbreVenteByDate($start, $end)
+	{
+		$fday = date('Y-m-d', strtotime('first day of last month'));
+		$lday = date('Y-m-d', strtotime('last day of last month'));
+		return $this->db->select('count(id) as total_vente')
+					->from($this->table)
+					->where('date_creation >=',$start)
+					->where('date_creation <=',$end)
+					->get()
+					->row();
+    }
 
 	public function getByDateAndCategorieFiltre($start, $end, $categorie)
 	{
