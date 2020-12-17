@@ -28,7 +28,9 @@ class Home extends CI_Controller {
             $data['totalProduit']=$this->produit_model->getTotalProduit();
 			$data['totalClient']=$this->client_model->getTotalClient();
 			$data['totalEmploye']=$this->employe_model->getTotalEmploye();
-            $data['totalVenteByDate']=$this->vente_model->getNbreVenteByDate($startDate, $endDate);
+			$data['totalVenteByDate']=$this->vente_model->getNbreVenteByDate($startDate, $endDate);
+			$data['nbrProduitByCategorie']=$this->produit_model->getTotalProduitByCategorie();
+			$data['ProduitquantiteSeuil']=$this->produit_model->getAll();
         
         
      

@@ -40,7 +40,7 @@
                             </div>
                         </a>
                         <a href="<?php echo base_url().""; ?>">
-                            <div class="col-md-4 col-sm-8 col-xs-12">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="r4_counter db_box">
                                     <i class="pull-left fa fa-users icon-md icon-rounded icon-primary"></i>
                                     <div class="stats">
@@ -51,12 +51,105 @@
                             </div>
                         </a>
                     </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 col-sm-10 col-xs-12">
+                       
+                        <div class="r2_graph1 db_box">
+                        <section class="box ">
+                            <header class="panel_header">
+                                <h2 class="title pull-left">Number of product by category</h2>
+                                <div class="actions panel_actions pull-right">
+                                    <i class="box_toggle fa fa-chevron-down"></i>
+                                    <i class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></i>
+                                    <i class="box_close fa fa-times"></i>
+                                </div>
+                            </header>
+                        </section>
+                                <table id="example-1" class="table table-striped dt-responsive display" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Category</th>
+                                            <th>Number of Products</th>
+                                             
+                                        </tr>
+                                    </thead>
 
+                                    <tbody>
+                                        <?php 
+                                             $i=0;
+                                            foreach($nbrProduitByCategorie as $item) {
+
+                                                $i++;
+                                              
+                                                ?>
+                                        <tr >
+                                            <td><?php echo $i; ?></td>
+                                            <td><?php echo  $item['nom_categorie'];?> </td>
+                                            <td><?php echo  $item['nbr_produit']; ?></td>
+                                        </tr>
+                                      
+                                        <?php 
+                                                    }
+                                                ?>                 
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-10 col-xs-12">
+                       
+                        <div class="r2_graph1 db_box">
+                        <section class="box ">
+                            <header class="panel_header">
+                                <h2 class="title pull-left">Stock to renew</h2>
+                                <div class="actions panel_actions pull-right">
+                                    <i class="box_toggle fa fa-chevron-down"></i>
+                                    <i class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></i>
+                                    <i class="box_close fa fa-times"></i>
+                                </div>
+                            </header>
+                        </section>
+                                <table id="example-2" class="table table-striped dt-responsive display" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Products</th>
+                                            <th>Quantite</th>
+                                            <th>Lower limit</th>
+                                            
+                                             
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <?php 
+                                             $i=0;
+                                            foreach($ProduitquantiteSeuil as $s) {
+                                                $i++;
+                                                
+                                                ?>
+                                        <tr <?php if ($s->quantite <= $s->seuil) echo 'style="background-color: #F6AEAE;"';?>>
+                                            <td><?php echo $i; ?></td>
+                                            <td><?php echo $s->nom ; ?>  </td>
+                                            <td><?php echo $s->quantite  ; ?>  </td>
+                                            <td><?php echo $s->seuil ;?></td>
+                                        </tr>
+                                      
+                                        <?php 
+                                                    }
+                                                ?>         
+                                    </tbody>
+                                </table>
+
+                            </div> 
+                        </div>
+                    </div>
+                  
                 </div>
             </section>
         </div>
-
-
 
     </section>
 </section>
